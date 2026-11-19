@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Character extends Model
 {
@@ -16,7 +17,7 @@ class Character extends Model
     ];
 
 
-    public function questions() {
-        return $this->hasMany(Question::class);
+    public function characterAnswers(): HasMany {
+        return $this->hasMany(CharacterAnswer::class);
     }
 }

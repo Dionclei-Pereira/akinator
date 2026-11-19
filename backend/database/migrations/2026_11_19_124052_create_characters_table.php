@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('characters', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->nullable();
             $table->string('serie')->default("unknown");
             $table->string('image')->nullable();
             $table->integer('times_found')->default(0);
